@@ -1,24 +1,23 @@
 # Strings Lab Introduction
 
 ## Problem Statement 
-In this lab introduction, we're going to take a deep dive into strings in JavaScript by walking you through the process of running tests in the Learn environment, and submitting a lab. We're also going to familiarize ourselves with the structure and flow of the JavaScript labs in the Learn.co curriculum.
+In this exercise, we're going to walk you through the process of running tests in the Learn environment. We're also going to familiarize ourselves with the structure and flow of the JavaScript labs in the Learn.co curriculum.
 
 For this lab, you've just been onboarded to the dev team working on Flatbook, the world's premier Flatiron School-based social network. At the moment, the view that our users see upon logging in is pretty generic. We'd like to improve the user experience by adding some custom greeting capabilities.
 
-The only file you need to modify is `index.js`. Save the file every time you make a change to it, and the test suite in your browser will automatically re-run itself and push the results to Learn. When all of the tests are passing at the end of the code-along, the `Run Local Tests` light on the Learn.co lesson page will turn green.
+The only file you need to modify is `index.js`. Save the file every time you make a change to it, and the test suite in your browser will automatically re-run itself. 
 
 ## Objectives
-1. Run the test suite for a JavaScript lab on Learn.co
+1. Run the test suite
 2. Work through failing tests in a JavaScript test suite
 3. Concatenate strings with the `+` operator
 4. Interpolate variables and other JavaScript expressions inside template literals
 5. Read the MDN documentation on string methods and practice using a few
-6. Submit a pull request after successfully completing a lab
 
-## Run the Test Suite for a JavaScript Lab on Learn.co
-To start off, let's run the test suite with the `learn` command. If you're coding along in a local environment, a browser window should automatically open when you run the command. If you're in the IDE, follow the instructions that appear after you run the `learn` command.
+## Run the Test Suite for a JavaScript Lab
+To start off, let's run the test suite with the `learn` command. If you're coding in a local environment, a browser window should automatically open when you run the command. 
 
-Once you have `index.js` open in the IDE (or your local text editor) and the correct page open in your browser, you're ready to go.
+Once you have `index.js` open in your text editor and the correct page open in your browser, you're ready to go.
 
 Before we've written any code, the test suite in the browser looks pretty intimidating:
 
@@ -26,7 +25,7 @@ Before we've written any code, the test suite in the browser looks pretty intimi
 
 Our code is currently failing all of the tests, but we expected that because we haven't done anything yet. Let's get to work!
 
-Right off the bat, let's [open the browser's JavaScript console][open JS console] so that we can play around with our code as we modify `index.js`:
+Right off the bat, let's open the browser's JavaScript console so that we can play around with our code as we modify `index.js`:
 
 ![JavaScript console open](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/javascript_console_open.png)
 
@@ -123,7 +122,7 @@ const welcomeMessage = 'Welcome to Flatbook, ' + currentUser;
 If we run the test suite with our updated code, we'll see both the second and third tests passing! However, before we move on, let's talk about interpolation.
 
 ## Interpolate Variables and Other JavaScript Expressions Inside Template Literals 
-String interpolation lets us dynamically insert values in the middle of a string. Before ES2015, we could accomplish this with concatenation:
+String interpolation lets us dynamically insert values in the middle of a string. Before ES2015, we could only accomplish this with concatenation:
 ```js
 const myString = 'concatenat';
 //=> undefined
@@ -326,16 +325,8 @@ const shortGreeting = `Welcome, ${currentUser.slice(0, 1)}!`;
 
 Nice job!
 
-## Conclusion
-
-When all of the tests are passing, the `Run Local Tests` light on the Learn.co lesson page should turn green, and you can close the browser tab that contains the test suite. Flip back to the terminal and press the `Control` and `C` keys at the same time to halt the test server.
-
-We're ready to submit our passing code and move on to the next lesson. Type `learn submit` in your terminal to submit your lab!
-
-Great work!
 
 ## Resources
-- [StackExchange – How to open the JavaScript console][open JS console]
 - [MDN — Template literals][template literals]
 - [DRY — Don't Repeat Yourself][DRY]
 - [MDN — String — `.length`][length]
@@ -345,7 +336,6 @@ Great work!
   + [MDN — `.toLowerCase()`][toLowerCase]
   + [MDN — `.slice()`][slice]
 
-[open JS console]: https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers/77337#77337
 [template literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 [DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [string methods]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2
@@ -355,6 +345,5 @@ Great work!
 [toLowerCase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 [charAt]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 [slice]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
-[manual PR instructions]: http://help.learn.co/workflow-tips/github/how-to-manually-submit-a-lab
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-basics-strings-code-along'>Strings Code-along</a> on Learn.co and start learning to code for free.</p>
