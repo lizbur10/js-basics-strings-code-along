@@ -239,6 +239,8 @@ const currentUser = 'Grace Hopper';
 const shortGreeting = `Welcome, ${currentUser.slice(0, 1)}!`;
 ```
 
+![All passing](/resources/all-passing.png)
+
 Nice job!
 
 

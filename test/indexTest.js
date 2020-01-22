@@ -22,22 +22,6 @@ describe('index.js', () => {
     });
   });
 
-  describe('excitedWelcomeMessage', () => {
-    it('contains "WELCOME TO FLATBOOK, "', () => {
-      expect(excitedWelcomeMessage).to.have.string('WELCOME TO FLATBOOK, ');
-    });
-
-    it("contains the value of the 'currentUser' variable", () => {
-      const upperCaseCurrentUser = currentUser.toUpperCase();
-
-      expect(excitedWelcomeMessage).to.have.string(upperCaseCurrentUser);
-    });
-
-    it('ends with an exclamation point', () => {
-      expect(excitedWelcomeMessage.substr(-1)).to.eq('!');
-    });
-  });
-
   describe('shortGreeting', () => {
     it(`contains "Welcome, "`, () => {
       expect(shortGreeting).to.have.string('Welcome, ');
