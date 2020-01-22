@@ -239,8 +239,6 @@ const currentUser = 'Grace Hopper';
 const shortGreeting = `Welcome, ${currentUser.slice(0, 1)}!`;
 ```
 
-![All tests passing](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/all_tests_passing.png)
-
 Nice job!
 
 
@@ -250,8 +248,6 @@ Nice job!
 - [MDN — String — `.length`][length]
 - [MDN — String — Character access][character access]
 - [MDN — String — Methods][string methods]
-  + [MDN — `.toUpperCase()`][toUpperCase]
-  + [MDN — `.toLowerCase()`][toLowerCase]
   + [MDN — `.slice()`][slice]
 
 [template literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
@@ -259,9 +255,5 @@ Nice job!
 [string methods]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2
 [length]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 [character access]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Character_access
-[toUpperCase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-[toLowerCase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 [charAt]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 [slice]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-basics-strings-code-along'>Strings Code-along</a> on Learn.co and start learning to code for free.</p>
