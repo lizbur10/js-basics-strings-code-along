@@ -25,17 +25,11 @@ Before we've written any code, the test suite in the browser looks pretty intimi
 
 Our code is currently failing all of the tests, but we expected that because we haven't done anything yet. Let's get to work!
 
-Right off the bat, let's open the browser's JavaScript console so that we can play around with our code as we modify `index.js`:
-
-![JavaScript console open](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/javascript_console_open.png)
+You might want to open up the console so you can play around with the code as you modify `index.js`:
 
 ## Work Through Failing Tests in a JavaScript Test Suite
 #### `currentUser`
-The first test is telling us that `currentUser` is not defined. Let's verify that in the console by typing `currentUser`:
-
-![Checking the value of currentUser in the console](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/checking_values_in_console.png)
-
-This gives us a `ReferenceError`. In this case, the `ReferenceError` is telling us that `currentUser` is undefined. That lets us know that we need to declare a new variable named `currentUser`. Let's go to `index.js` and write the following code:
+The first test is telling us that `currentUser` is not defined. The `ReferenceError` is telling us that `currentUser` is undefined. That lets us know that we need to declare a new variable named `currentUser`. Let's go to `index.js` and write the following code:
 ```js
 const currentUser = 'Grace Hopper';
 ```
@@ -62,16 +56,7 @@ const welcomeMessage = 'Welcome to Flatbook, ';
 When we save `index.js`, we should see a second passing test:
 ![Two passing tests](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/two_passing_tests.png)
 
-The third test tells us that `welcomeMessage` should contain the value stored in `currentUser`. This seems like it might contradict the second test a bit, but let's try it out. Let's erase `'Welcome to Flatbook, '` and set `welcomeMessage` equal to `currentUser` instead:
-```js
-const currentUser = 'Grace Hopper';
-
-const welcomeMessage = currentUser;
-```
-
-When we save the file and look back at the browser, we still have two passing tests. But now the first and third tests are passing instead of the first and second! That doesn't seem quite right.
-
-It turns out that the tests want `welcomeMessage` to include _both_ `'Welcome to Flatbook, '` and the value stored in `currentUser`. Maybe we can include both of them in a single string?
+The third test tells us that `welcomeMessage` should contain the value stored in `currentUser`. It appears that the tests want `welcomeMessage` to include _both_ `'Welcome to Flatbook, '` and the value stored in `currentUser`. Maybe we can include both of them in a single string?
 ```js
 const currentUser = 'Grace Hopper';
 
@@ -122,39 +107,7 @@ const welcomeMessage = 'Welcome to Flatbook, ' + currentUser;
 If we run the test suite with our updated code, we'll see both the second and third tests passing! However, before we move on, let's talk about interpolation.
 
 ## Interpolate Variables and Other JavaScript Expressions Inside Template Literals 
-String interpolation lets us dynamically insert values in the middle of a string. Before ES2015, we could only accomplish this with concatenation:
-```js
-const myString = 'concatenat';
-//=> undefined
-
-const myNumber = 20;
-//=> undefined
-
-const myBoolean = true;
-//=> undefined
-
-"It's " + myBoolean + ' that we can ' + myString + 'e values of any data type into one long ' + typeof myString + '. We could even ' + myString + 'e ' + (22 + myNumber) + " things together if we wanted to. We don't have to convert things like " + typeof myNumber + 's or ' + typeof myBoolean + 's prior to ' + myString + 'ing them. ' +
-
-'Even if we ' + myString + 'e across multiple lines, the return value is still a single, one-line ' + typeof myString + '.';
-//=> "It's true that we can concatenate values of any data type into one long string. We could even concatenate 42 things together if we wanted to. We don't have to convert things like numbers or booleans prior to concatenating them. Even if we concatenate across multiple lines, the return value is still a single, one-line string."
-```
-
 ES2015 introduced [template literals][template literals], which removed the need for concatenation. No more `+` operators needed; instead variables are interpolated in by wrapping them in curly braces preceded by a dollar sign: `${yourVariable}`. One other important thing: Template literals *must* use backticks in order to be interpreted correctly. Using single or double quotes will cause the dollar sign, curly braces and variable to be interpreted as regular string data.
-
-```js
-const myString = 'template literal';
-
-const myNumber = 10;
-
-const myBoolean = false;
-
-`Saying that interpolation with ${myString}s is better than concatenation ${90 + myNumber}% of the time is simply ${myBoolean}. But it is pretty cool!
-
-Beware that new lines inside of a ${myString} will be preserved as new lines in the resulting ${typeof myString}!`;
-//=> "Saying that interpolation with template literals is better than concatenation 100% of the time is simply false. But it is pretty cool!
-
-// Beware that new lines inside of a template literal will be preserved as new lines in the resulting string!"
-```
 
 Let's rewrite our `welcomeMessage` to use a template literal:
 ```js
@@ -170,22 +123,7 @@ const currentUser = 'Grace Hopper';
 const welcomeMessage = `Welcome to Flatbook, ${currentUser}!`;
 ```
 
-Four tests down, six to go!
-
-## Read the MDN Documentation on String Methods and Practice Using a Few
-#### `excitedWelcomeMessage`
-Sometimes we get so excited when someone logs into their Flatbook account that we just want to shout out loud. We *could* copy over most of the code from `welcomeMessage` and then change every character to its uppercase equivalent, but as developers we try not to repeat ourselves. Instead, let's use the `.toUpperCase()` string method:
-```js
-const currentUser = 'Grace Hopper';
-
-const welcomeMessage = `Welcome to Flatbook, ${currentUser}!`;
-
-const excitedWelcomeMessage = welcomeMessage.toUpperCase();
-```
-
-All strings in JavaScript have access to the same set of default methods, which are common operations like changing and returning a new string, searching through a string for specific character(s) and returning the match, and so on. For example, we can use [`.toUpperCase()`][toUpperCase] and [`.toLowerCase()`][toLowerCase] on a string to make the entire string uppercase or lowercase. There are lots of other [string methods][string methods] that you'll find useful at various points throughout your JavaScript programming career.
-
-If you save `index.js` after adding the code for `excitedWelcomeMessage` and then flip back to the browser-based test suite, we should see the first seven tests passing. Woohoo!
+Four tests down, three to go!
 
 #### `shortGreeting`
 The mobile team at Flatbook is busy redesigning the site for smaller devices, and they're a bit concerned about how much real estate the `welcomeMessage` takes up on the screen. They want us to create a shorter version that truncates the `currentUser`'s name into just their first initial:
@@ -266,14 +204,7 @@ There are a few different ways we could get just the first character of `current
 
 However, it's a good practice to make our code flexible and future-proof it a bit. What if our product team decides it would be better to shorten `currentName` to two characters instead of one? Or three characters?
 
-For the added flexibility, we're going to use `.slice()`, but you can always explore the [MDN documentation on string methods][string methods] to pick out your own strategy.
-
-#### `.slice()`
-Let's take a look at the documentation for [`.slice()`][slice]:
-
-[![String.prototype.slice() documentation on MDN](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/MDN_string_slice_documentation.png)][slice]
-
->The **slice()** method extracts a section of a string and returns it as a new string.
+For the added flexibility, we're going to use the [`.slice()`][slice] method, which extracts a section of a string and returns it as a new string.
 
 The method takes two arguments, the indexes at which the extraction should begin and before which it should end. When we talk about indexes of a string, we're talking about how to access specific characters at various points within the string. Remember, computers start counting at 0, where humans start counting at 1. Because we start at index `0` instead of `1`, the index of each character in a string is always one less than the character's place in the string. The second character is at index `1`, the fifth at index `4`, the twelfth at index `11`, and so on. The index of the last character is always one less than the [length][length] of the string:
 ```js
