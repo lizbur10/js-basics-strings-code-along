@@ -1,7 +1,7 @@
 # Strings Lab Introduction
 
 ## Problem Statement 
-In this exercise, we're going to walk you through the process of running tests in the Learn environment. We're also going to familiarize ourselves with the structure and flow of the JavaScript labs in the Learn.co curriculum.
+In this exercise, we're going to walk you through the process of running tests in the Learn environment. We're also going to get more familiar with the structure and flow of the JavaScript labs in the Learn.co curriculum.
 
 For this lab, you've just been onboarded to the dev team working on Flatbook, the world's premier Flatiron School-based social network. At the moment, the view that our users see upon logging in is pretty generic. We'd like to improve the user experience by adding some custom greeting capabilities.
 
@@ -12,7 +12,7 @@ The only file you need to modify is `index.js`. Save the file every time you mak
 2. Work through failing tests in a JavaScript test suite
 3. Concatenate strings with the `+` operator
 4. Interpolate variables and other JavaScript expressions inside template literals
-5. Read the MDN documentation on string methods and practice using a few
+5. Learn about one of JavaScript's `String` methods, `slice()`
 
 ## Run the Test Suite for a JavaScript Lab
 To start off, let's run the test suite with the `learn` command. If you're coding in a local environment, a browser window should automatically open when you run the command. 
@@ -53,8 +53,7 @@ const currentUser = 'Grace Hopper';
 const welcomeMessage = 'Welcome to Flatbook, ';
 ```
 
-When we save `index.js`, we should see a second passing test:
-![Two passing tests](https://curriculum-content.s3.amazonaws.com/web-development/js/basics/strings-code-along/two_passing_tests.png)
+When we save `index.js`, we should see a second passing test.
 
 The third test tells us that `welcomeMessage` should contain the value stored in `currentUser`. It appears that the tests want `welcomeMessage` to include _both_ `'Welcome to Flatbook, '` and the value stored in `currentUser`. Maybe we can include both of them in a single string?
 ```js
@@ -126,19 +125,7 @@ const welcomeMessage = `Welcome to Flatbook, ${currentUser}!`;
 Four tests down, three to go!
 
 #### `shortGreeting`
-The mobile team at Flatbook is busy redesigning the site for smaller devices, and they're a bit concerned about how much real estate the `welcomeMessage` takes up on the screen. They want us to create a shorter version that truncates the `currentUser`'s name into just their first initial:
-```js
-const currentUser = 'Edsger Dijkstra';
-
-...
-
-const shortGreeting = ... ;
-
-shortGreeting;
-//=> "Welcome, E!"
-```
-
-Returning to the test suite in the browser, the JavaScript engine is telling us that it can't find `shortGreeting`:
+The mobile team at Flatbook is busy redesigning the site for smaller devices, and they're a bit concerned about how much real estate the `welcomeMessage` takes up on the screen. They want us to create a shorter version that truncates the `currentUser`'s name into just their first initial. Returning to the test suite in the browser, the JavaScript engine is telling us that it can't find `shortGreeting`:
 ```js
 shortGreeting
   contains "Welcome, "
